@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 1000px;
+            height: 800px;
+        }
+
+        div{
+            border: 1px solid red ;
+            box-sizing: border-box;
+        }
+
+        #content_top, #content_bottom{
+            height: 10%;
+        }
+
+        #content_main{
+            height: 80%;
+        }
+
+        #content_top>div{
+            height: 100%;
+            float: left;
+        }
+
+        #content_top1{
+            width: 50%;
+            font-size: 30px;
+        }
+
+        #content_top2{
+            width: 50%;
+            text-align: right;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div id="content_top">
+            <div id="content_top1">
+                
+            </div>
+            <div id="content_top2">
+                <input type="text">
+            </div>
+        </div>
+
+        <div id="content_main"></div>
+
+        <div id="content_bottom"></div>
+    </div>
+
+
+
+</body>
+</html>
