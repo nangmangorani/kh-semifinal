@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         div {
-            /* border: 1px solid black; */
+            border: 1px solid black;
             box-sizing: border-box;
         }
         .wrap {
@@ -20,35 +20,47 @@
         }
         
         #header{
-            height: 10%;
+            width: 100%;
+            height: 7%;
         }
         
-        #header1, #header3{
-            height: 100%;
-            float: left;
-            width: 13%;
-            /* border: 1px solid red; */
-        }
-        #header2 {
-            width: 74%;
-            height: 100%;
-            float: left;
-            /* border: 1px solid red; */
-        }
-        #logo{
+        .wrap>div{
             width: 100%;
-            height: 100%;
         }
 
+        #header{
+            height: 7%;
+        }
+        
+        #logo, #login{
+            width: 20%;
+        }
+
+        #search{
+            width: 60%;
+        }
+
+
+        #logo>img{
+            width: 80px;
+            height: 77px;
+        }
+
+        
         #searchTab{
             width: 500px;
             border-radius: 20px;
-            margin-top: 40px;
-            margin-left: 100px;
+            margin-top: 30px;
+            margin-left: 20px;
         }
-        
+
+        #header>div{
+            height: 100%;
+            float: left;
+        }
+
         #content{
-            height: 75%;
+            height: 78%;
         }
         #footer{
             height: 15%;
@@ -103,16 +115,16 @@
 
     <div class="wrap">
         <div id="header" style="border-bottom: 1px solid black;">
-            <div id="header1">
-                <img src="./이눔세끼화이팅/resources/img/logo.png" id="logo">
-            </div>
-            <div id="header2">
+            <div id="header">
+                <div id="logo">
+                    <img src="./이눔세끼화이팅/resources/img/logo.png">
+                </div>
                 <div id="search">
                     <input type="text" name="" id="searchTab">
                     <input type="submit" name="" id="">
                 </div>
+                <div id="login"></div>
             </div>
-            <div id="header3"></div>
         </div>
         <div id="content">
             <h2 style="margin-top: 15px;">이눔세끼 공지사항</h2> <br>
