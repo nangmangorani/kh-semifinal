@@ -10,9 +10,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <style>
+        @font-face {
+        font-family: 'SUITE-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        }
         div{
             /* border: 1px solid red; */
             box-sizing: border-box;
+            font-family: 'SUITE-Regular';
         }
         
         .wrap {
@@ -74,11 +81,12 @@
 
         #footer{
             height: 15%;
+            display: inline-block;
         }
         
         .faqNumTop{
             height: 8%;
-            width: 20%;
+            width: 10%;
             float:left;
             text-align: center;
             line-height: 55px;
@@ -118,7 +126,7 @@
 
         [class^='faqNum_']{
             float:left;
-            width: 20%;
+            width: 10%;
             border-bottom: 1px solid lightgray;
         }
         
@@ -131,19 +139,20 @@
         [class^='faqAnswerLeft']{
             float:left;
             text-align: center;
-            width: 20%;
+            width: 10%;
             padding-top: 160px;
-            background-color: rgb(228, 252, 247);
+            background-color: rgb(231, 248, 252)
         }
 
         [class^='faqAnswerRight']{
             width: 100%;    
             text-align: left;
-            background-color: rgb(228, 252, 247);
+            background-color: rgb(231, 248, 252)
         }
 
         [class^='faqAnswerRight'], [class^='faqAnswerLeft'] {
             height: 50%;
+            display:none;
         }
 
         #faqSearch{
@@ -153,20 +162,20 @@
         }
 
         select {
-        font-family: "Noto Sansf KR", sans-serif;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
+            font-family: "Noto Sansf KR", sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
 
-        color: #444;
-        background-color: #fff;
+            color: #444;
+            background-color: #fff;
 
-        padding: 0.6em 1.4em 0.5em 0.8em;
-        margin: 0;
+            padding: 0.6em 1.4em 0.5em 0.8em;
+            margin: 0;
 
-        border: 1px solid #aaa;
-        border-radius: 0.5em;
-        box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+            border: 1px solid #aaa;
+            border-radius: 0.5em;
+            box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
         }
 
         select:hover {
@@ -174,15 +183,15 @@
         }
 
         select:focus {
-        border-color: #aaa;
-        /* box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7); */
-        box-shadow: 0 0 0 3px -moz-mac-focusring;
-        color: #222;
-        outline: none;
+            border-color: #aaa;
+            /* box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7); */
+            box-shadow: 0 0 0 3px -moz-mac-focusring;
+            color: #222;
+            outline: none;
         }
 
         select:disabled {
-        opacity: 0.5;
+            opacity: 0.5;
         }
 
         #selectDiv{
@@ -201,6 +210,39 @@
             height: 40px;
             border-radius: 10px;
             border: 1px solid gray;
+        }
+
+        #footer_1{
+            margin-top: 100px;
+        }
+
+        #footer *{
+            margin-left: 20px;
+        }
+
+        #footer_1>a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+
+        #footer_2{
+            margin-top: 20px;
+        }
+
+        #footer_3{
+            margin-top: 10px;
+        }
+
+        #footer_4{
+            margin-top: 10px;
+        }
+
+        #searchBtn{
+            margin-left: 5px;
+            background-color: rgb(21, 98, 189);
+            color: white;
+            width: 80px;
         }
 
         
@@ -237,7 +279,7 @@
             </div>
             <div id="searchTab2">
                 <input type="text">
-                <input type="submit" value="검색하기" style="margin-left: 5px;">
+                <input type="submit" value="검색" id="searchBtn">
             </div>
             
             
@@ -512,80 +554,91 @@
                         [회원정보 수정 FAQ 바로 가기]
                     </span>
                 </div>
-                
-
-                
-                
             </div>
-
         </div>
-
-
-
-
-
-        <script>
-            //글번호 혹은 제목 div 클릭시
-            $("[class^='faqAnswerLeft'], [class^='faqAnswerRight']").hide();
-            
-            $(function(){
-                $(".faqNum_1, .faqTitle_1").click(function(){
-                    $(".faqAnswerLeft_1, .faqAnswerRight_1").toggle();
-                })
-            })
-            
-            $(function(){
-                $(".faqNum_2, .faqTitle_2").click(function(){
-                    $(".faqAnswerLeft_2, .faqAnswerRight_2").toggle();
-                })
-            })
-
-            $(function(){
-                $(".faqNum_3, .faqTitle_3").click(function(){
-                    $(".faqAnswerLeft_3, .faqAnswerRight_3").toggle();
-                })
-            })
-
-            $(function(){
-                $(".faqNum_4, .faqTitle_4").click(function(){
-                    $(".faqAnswerLeft_4, .faqAnswerRight_4").toggle();
-                })
-            })
-
-            $(function(){
-                $(".faqNum_5, .faqTitle_5").click(function(){
-                    $(".faqAnswerLeft_5, .faqAnswerRight_5").toggle();
-                })
-            })
-
-            $(function(){
-                $(".faqNum_6, .faqTitle_6").click(function(){
-                    $(".faqAnswerLeft_6, .faqAnswerRight_6").toggle();
-                })
-            })
-
-            $(function(){
-                $(".faqNum_7, .faqTitle_7").click(function(){
-                    $(".faqAnswerLeft_7, .faqAnswerRight_7").toggle();
-                })
-            })
-
-            $(function(){
-                $(".faqNum_8, .faqTitle_8").click(function(){
-                    $(".faqAnswerLeft_8, .faqAnswerRight_8").toggle();
-                })
-            })
-
-            $(function(){
-                $(".faqNum_9, .faqTitle_9").click(function(){
-                    $(".faqAnswerLeft_9, .faqAnswerRight_9").toggle();
-                })
-            })
-
-
-        </script>
-        <div id="footer"></div>
+        <div id="footer">
+            <div id="footer_1">
+                <a href=""> 데이터 제휴 문의 </a>
+                <a href=""> 개인정보처리방침 </a>
+                <a href=""> 이용약관 </a>
+                <a href=""> 위치기반 서비스 이용약관 </a>
+            </div>
+            <div id="footer_2">
+                <b>(주)유소</b>
+                <span>소재지 : 서울특별시 강남구 역삼동</span>
+            </div>
+            <div id="footer_3">
+                <span>이메일 문의: 2num@enum.com</span>
+            </div>
+            <div id="footer_4">
+                <span>전화 문의 : 02-457-1304 (평일 : 10:00 ~ 19:00, 주말/공휴일 제외)</span>
+                <span style="margin-left: 260px;">Copyright Ⓒ 2023 Diningcode</span>
+            </div>
+        </div>
     </div>
 
+    <script>
+        //글번호 혹은 제목 div 클릭시
+        //$("[class^='faqAnswerLeft'], [class^='faqAnswerRight']").hide();
+        // 만약 다른 toggle이 실행중이라면 display : none;을 하는건 어떰?  
+
+        
+        //$(div).css("background-color","yellow");
+        $(function(){
+            $(".faqNum_1, .faqTitle_1").click(function(){
+                $(".faqAnswerLeft_1, .faqAnswerRight_1").toggle();
+            })
+        })
+        
+        $(function(){
+            $(".faqNum_2, .faqTitle_2").click(function(){
+                $(".faqAnswerLeft_2, .faqAnswerRight_2").toggle();
+            })
+        })
+
+        $(function(){
+            $(".faqNum_3, .faqTitle_3").click(function(){
+                $(".faqAnswerLeft_3, .faqAnswerRight_3").toggle();
+            })
+        })
+
+        $(function(){
+            $(".faqNum_4, .faqTitle_4").click(function(){
+                $(".faqAnswerLeft_4, .faqAnswerRight_4").toggle();
+            })
+        })
+
+        $(function(){
+            $(".faqNum_5, .faqTitle_5").click(function(){
+                $(".faqAnswerLeft_5, .faqAnswerRight_5").toggle();
+            })
+        })
+
+        $(function(){
+            $(".faqNum_6, .faqTitle_6").click(function(){
+                $(".faqAnswerLeft_6, .faqAnswerRight_6").toggle();
+            })
+        })
+
+        $(function(){
+            $(".faqNum_7, .faqTitle_7").click(function(){
+                $(".faqAnswerLeft_7, .faqAnswerRight_7").toggle();
+            })
+        })
+
+        $(function(){
+            $(".faqNum_8, .faqTitle_8").click(function(){
+                $(".faqAnswerLeft_8, .faqAnswerRight_8").toggle();
+            })
+        })
+
+        $(function(){
+            $(".faqNum_9, .faqTitle_9").click(function(){
+                $(".faqAnswerLeft_9, .faqAnswerRight_9").toggle();
+            })
+        })
+
+
+    </script>
 </body>
 </html>
