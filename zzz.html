@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .faq-question {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .faq-answer {
+    display: none;
+    margin-top: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="faq-question">Question 1: What is Lorem Ipsum?</div>
+<div class="faq-answer">
+  Answer to Question 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div class="faq-question">Question 2: Why do we use it?</div>
+<div class="faq-answer">
+  Answer to Question 2. Nulla facilisi. Curabitur volutpat consequat mi a bibendum.
+</div>
+
+<div class="faq-question">Question 3: Where does it come from?</div>
+<div class="faq-answer">
+  Answer to Question 3. Fusce eu diam eget diam sagittis pharetra a et nisl.
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const questions = document.querySelectorAll('.faq-question');
+  const answers = document.querySelectorAll('.faq-answer');
+
+  questions.forEach((question, index) => {
+    question.addEventListener('click', function() {
+      answers.forEach((answer) => {
+        answer.style.display = 'none';
+      });
+
+      answers[index].style.display = 'block';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
