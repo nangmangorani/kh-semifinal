@@ -374,12 +374,20 @@
         }
 
         #modalBtn1{
+            width: 70px;
+            height: 70px;
+            background-color: transparent;
+            margin-top: 10px;            
+            margin-bottom: 10px;            
+        }
+
+        #modalBtn2{
             border: 1px solid rgb(0, 205, 205);
             color: rgb(0, 205, 205);
             background-color: white;
         }
 
-        #modalBtn2{
+        #modalBtn3{
             border: 1px solid transparent;
             background-color: rgb(0, 205, 205);
             color: white;
@@ -830,11 +838,15 @@
                     <input type="text" name="" id="inputRestaurantName" placeholder="등록하려는 식당명을 입력하세요."> <br><br>
                     <span>식당정보</span> <br>
                     <textarea name="" id="inputRestaurantInf" cols="30" rows="10" placeholder="식당에 대한 정보를 자유롭게 써주세요."></textarea> <br>
-                    <button class="modalBtn" id="modalBtn1">닫기</button>
-                    <button class="modalBtn" id="modalBtn2">제출</button>
+                    <button id="modalBtn1">
+                        <img src="./이눔세끼화이팅/resources/img/iconmonstr-plus-lined-240.png" alt="">
+                    </button>
+                    <br>
+                    <button class="modalBtn" id="modalBtn2">닫기</button>
+                    <button class="modalBtn" id="modalBtn3">제출</button>
                   </form>
                 </div>
-</body>
+    </body>
 </html>
 
 <!-- 

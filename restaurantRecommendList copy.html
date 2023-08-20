@@ -18,7 +18,7 @@
         font-style: normal;
         }
         div{
-            /* border: 1px solid red; */
+            /*border: 1px solid red;*/
             font-family: 'SUITE-Regular';
             box-sizing: border-box;
         }
@@ -97,84 +97,114 @@
             border-bottom: 1px solid lightgray;
         }
 
+        
+
+        .restaurant:hover{
+            background-color: rgb(240, 240, 240);
+        }
+
         .imgLine{
+            width: 100%;
             height: 80%;
-            width: 100%;
-        }
-
-        .textLine{
-            height: 20%;
-            width: 100%;
-        }
-
-        .textLine>span{
-            margin-left: 20px;
-            width: 100%;
-        }
-
-        .imgLine>img{
-            height: 120px;
-            width: 120px;
-            margin-left: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
         }
 
         .imgLeft{
-            float: left;
-            height: 100%;
             width: 25%;
+            height: 100%;
+            float: left;
         }
 
         .imgRight{
-            height: 100%;
+            width: 100%;
+            height: 100%
         }
 
-        .imgRight_1>span{
-            font-size: 23px;
-            line-height: 50px;
+        .textLine{
+            width: 100%;
+            height: 20%;
+        }
+
+        .restaurant_desc{
+            height: 100%; 
+            width: 100%; 
+            float: left;
+        }
+
+        .bigHeart{
+            float: right;
+            height: 35px;
+            width: 35px;
+            margin-right: 15px;
+            margin-top: 8px;
+        }
+
+        .imgRight_1{
+            font-size: 22px;
+            line-height: 48px;
         }
 
         .imgLeft>img{
-            width: 85%;
-            height: 85%;
-            margin-left: 13px;
-            margin-top: 11px;
+            width: 140px;
+            height: 140px;
+            margin-left: 15px;
+            margin-top: 12px;
             border-radius: 10px;
+        }
+
+        .moreBtn{
+            margin: auto;
+            margin-top: 20px;
+            border: transparent;
+            width: 400px;
+            height: 40px;
+            background-color: rgb(21, 98, 189);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         .imgRight_4>img{
             width: 20px;
         }
 
-        .restaurant:hover{
-            background-color: rgb(240, 240, 240);
-        }
 
-        #bigHeart{
-            width: 30px; 
-            height: 30px; 
-            float: right; 
-            margin-right: 40px;
-            margin-top: 10px;
-        }
-
-        .location{
-            margin-left: 14px;
-            margin-top: 6px;
-            width: 210px;
-            height: 30px;
-            border: 1px solid lightgray;
-            padding-left: 10px;
-        }
-
-        
 
         #footer{
             width: 100%;
             height: 15%;
             display: inline-block;
         }
+        #footer_1{
+            margin-top: 10px;
+        }
+
+        #footer *{
+            margin-left: 20px;
+        }
+
+        #footer_1>a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+
+        #footer_2{
+            margin-top: 20px;
+        }
+
+        #footer_3{
+            margin-top: 10px;
+        }
+
+        #footer_4{
+            margin-top: 10px;
+        }
+
+        .hidden{
+            display: none; 
+        }
+
+
 
 
 
@@ -183,24 +213,24 @@
 <body>
     <div class="wrap">
         <div id="header">
-            
+
         </div>
         <div id="content">
             <div id="content_1">
                 <span>
-                    <h2>승준 추천 맛집 5곳</h2>
+                    <h2>주원 추천 맛집 5곳</h2>
                 </span>
             </div>
             <div id="content_2">
                 <div class="restaurant" onclick="location.href='http://www.naver.com'">
                     <div class="imgLine">
                         <div class="imgLeft">
-                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg">
+                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg" alt="">
                         </div>
                         <div class="imgRight">
-                            <div class="imgRight_1" style="margin-top: 10px;">
-                                <span>1. 주원식당</span>
-                                <img src="./이눔세끼화이팅/resources/img/heart.png" alt="" id="bigHeart">
+                            <div class="imgRight_1">
+                                <span>1.주원식당</span>
+                                <img class="bigHeart" src="./이눔세끼화이팅/resources/img/heart.png" alt="">
                             </div>
                             <div class="imgRight_2">
                                 <span>짬뽕순두부</span>, &nbsp;
@@ -219,27 +249,24 @@
                                 121,732
                                 &nbsp;&nbsp;
                                 <img src="./이눔세끼화이팅/resources/img/heart.png" alt="">
-                                657
+                                657 
 
                             </div>
-
                         </div>
                     </div>
                     <div class="textLine">
-                        <span>
-                            연예인 주원이 하는곳인줄 알고 갔는데 강주원이있네요..
-                        </span>
+                        <div class="restaurant_desc">zz</div>
                     </div>
                 </div>
                 <div class="restaurant" onclick="location.href='http://www.naver.com'">
                     <div class="imgLine">
                         <div class="imgLeft">
-                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg">
+                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg" alt="">
                         </div>
                         <div class="imgRight">
-                            <div class="imgRight_1" style="margin-top: 10px;">
-                                <span>1. 주원식당</span>
-                                <img src="./이눔세끼화이팅/resources/img/heart.png" alt="" id="bigHeart">
+                            <div class="imgRight_1">
+                                <span>1.주원식당</span>
+                                <img class="bigHeart" src="./이눔세끼화이팅/resources/img/heart.png" alt="">
                             </div>
                             <div class="imgRight_2">
                                 <span>짬뽕순두부</span>, &nbsp;
@@ -258,27 +285,24 @@
                                 121,732
                                 &nbsp;&nbsp;
                                 <img src="./이눔세끼화이팅/resources/img/heart.png" alt="">
-                                657
+                                657 
 
                             </div>
-
                         </div>
                     </div>
                     <div class="textLine">
-                        <span>
-                            연예인 주원이 하는곳인줄 알고 갔는데 강주원이있네요..
-                        </span>
+                        <div class="restaurant_desc">zz</div>
                     </div>
                 </div>
                 <div class="restaurant" onclick="location.href='http://www.naver.com'">
                     <div class="imgLine">
                         <div class="imgLeft">
-                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg">
+                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg" alt="">
                         </div>
                         <div class="imgRight">
-                            <div class="imgRight_1" style="margin-top: 10px;">
-                                <span>1. 주원식당</span>
-                                <img src="./이눔세끼화이팅/resources/img/heart.png" alt="" id="bigHeart">
+                            <div class="imgRight_1">
+                                <span>1.주원식당</span>
+                                <img class="bigHeart" src="./이눔세끼화이팅/resources/img/heart.png" alt="">
                             </div>
                             <div class="imgRight_2">
                                 <span>짬뽕순두부</span>, &nbsp;
@@ -297,27 +321,24 @@
                                 121,732
                                 &nbsp;&nbsp;
                                 <img src="./이눔세끼화이팅/resources/img/heart.png" alt="">
-                                657
+                                657 
 
                             </div>
-
                         </div>
                     </div>
                     <div class="textLine">
-                        <span>
-                            연예인 주원이 하는곳인줄 알고 갔는데 강주원이있네요..
-                        </span>
+                        <div class="restaurant_desc">zz</div>
                     </div>
                 </div>
                 <div class="restaurant" onclick="location.href='http://www.naver.com'">
                     <div class="imgLine">
                         <div class="imgLeft">
-                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg">
+                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg" alt="">
                         </div>
                         <div class="imgRight">
-                            <div class="imgRight_1" style="margin-top: 10px;">
-                                <span>1. 주원식당</span>
-                                <img src="./이눔세끼화이팅/resources/img/heart.png" alt="" id="bigHeart">
+                            <div class="imgRight_1">
+                                <span>1.주원식당</span>
+                                <img class="bigHeart" src="./이눔세끼화이팅/resources/img/heart.png" alt="">
                             </div>
                             <div class="imgRight_2">
                                 <span>짬뽕순두부</span>, &nbsp;
@@ -336,27 +357,60 @@
                                 121,732
                                 &nbsp;&nbsp;
                                 <img src="./이눔세끼화이팅/resources/img/heart.png" alt="">
-                                657
+                                657 
 
                             </div>
-
                         </div>
                     </div>
                     <div class="textLine">
-                        <span>
-                            연예인 주원이 하는곳인줄 알고 갔는데 강주원이있네요..
-                        </span>
+                        <div class="restaurant_desc">zz</div>
                     </div>
                 </div>
                 <div class="restaurant" onclick="location.href='http://www.naver.com'">
                     <div class="imgLine">
                         <div class="imgLeft">
-                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg">
+                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg" alt="">
                         </div>
                         <div class="imgRight">
-                            <div class="imgRight_1" style="margin-top: 10px;">
-                                <span>1. 주원식당</span>
-                                <img src="./이눔세끼화이팅/resources/img/heart.png" alt="" id="bigHeart">
+                            <div class="imgRight_1">
+                                <span>1.주원식당</span>
+                                <img class="bigHeart" src="./이눔세끼화이팅/resources/img/heart.png" alt="">
+                            </div>
+                            <div class="imgRight_2">
+                                <span>짬뽕순두부</span>, &nbsp;
+                                <strong>순두부짬뽕</strong>
+                            </div>
+                            <div class="imgRight_3">
+                                <span>#한국인의밥상</span>,
+                                <span>#가족외식</span>,
+                                <span>#무료주차</span>
+                            </div>
+                            <div class="imgRight_4" style="margin-top: 10px;">
+                                <img src="https://dcicons.s3.ap-northeast-1.amazonaws.com/new/images/mobile/react_m_common/card__score__star2.png" alt="">
+                                4.2 (13명) 
+                                &nbsp;&nbsp;
+                                <img src="./이눔세끼화이팅/resources/img/view1.png" alt="">
+                                121,732
+                                &nbsp;&nbsp;
+                                <img src="./이눔세끼화이팅/resources/img/heart.png" alt="">
+                                657 
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="textLine">
+                        <div class="restaurant_desc">zz</div>
+                    </div>
+                </div>
+                <div class="restaurant hidden" onclick="location.href='http://www.naver.com'">
+                    <div class="imgLine">
+                        <div class="imgLeft">
+                            <img src="https://d12zq4w4guyljn.cloudfront.net/300_300_20230813205739_photo1_e85403339e4d.jpg" alt="">
+                        </div>
+                        <div class="imgRight">
+                            <div class="imgRight_1">
+                                <span>1.주원식당</span>
+                                <img class="bigHeart" src="./이눔세끼화이팅/resources/img/heart.png" alt="">
                             </div>
                             <div class="imgRight_2">
                                 <span>짬뽕순두부</span>, &nbsp;
@@ -376,21 +430,58 @@
                                 &nbsp;&nbsp;
                                 <img src="./이눔세끼화이팅/resources/img/heart.png" alt="">
                                 657
+
                             </div>
                         </div>
                     </div>
                     <div class="textLine">
-                        <span>
-                            연예인 주원이 하는곳인줄 알고 갔는데 강주원이있네요..
-                        </span>
+                        <div class="restaurant_desc">zz</div>
                     </div>
                 </div>
-                
             </div>
         </div>
+        
+        <div class="btn_line" style="align-items: center; display: flex;">
+            <button class="moreBtn">더보기</button>
+        </div>
         <div id="footer">
-            zz
+            
+            <div id="footer_1">
+                <a href=""> 데이터 제휴 문의 </a>
+                <a href=""> 개인정보처리방침 </a>
+                <a href=""> 이용약관 </a>
+                <a href=""> 위치기반 서비스 이용약관 </a>
+            </div>
+            <div id="footer_2">
+                <b>(주)유소</b>
+                <span>소재지 : 서울특별시 강남구 역삼동</span>
+            </div>
+            <div id="footer_3">
+                <span>이메일 문의: 2num@enum.com</span>
+            </div>
+            <div id="footer_4">
+                <span>전화 문의 : 02-457-1304 (평일 : 10:00 ~ 19:00, 주말/공휴일 제외)</span>
+                <span style="margin-left: 260px;">Copyright Ⓒ 2023 Diningcode</span>
+            </div>
         </div>
     </div>
+
+
+    <script>
+        $(function(){
+            $(".moreBtn").click(function(){
+                $(".restaurant.hidden").toggleClass("hidden");
+            })
+        })
+</script>
+
+
+
+
+
+
+
+
+    </script>
 </body>
 </html>
