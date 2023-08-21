@@ -373,11 +373,6 @@
             border-radius: 5px;
         }
 
-        #modalBtn1>img{
-            height: 100%;
-            width: 100%;
-        }
-
         #modalBtn1{
             width: 70px;
             height: 70px;
@@ -397,6 +392,59 @@
             background-color: rgb(0, 205, 205);
             color: white;
             margin-left: 11px;
+        }
+
+        #selectedPhotos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .preview-img {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+        }
+
+        .fileLabel{
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            border: 1px solid lightgray;
+            
+        }
+        .fileLabel>img{
+            height: 100%;
+            width: 100%;
+            
+        }
+
+        #photoInput{
+            display: flex;
+        }
+
+
+        .preview-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .preview-img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ccc;
+
+        }
+
+        .delete-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            font-weight: 900;
+            color: #fff;
+            border: none;
+            padding: 2px 6px;
+            cursor: pointer;
         }
 
 
@@ -843,10 +891,15 @@
                     <input type="text" name="" id="inputRestaurantName" placeholder="등록하려는 식당명을 입력하세요."> <br><br>
                     <span>식당정보</span> <br>
                     <textarea name="" id="inputRestaurantInf" cols="30" rows="10" placeholder="식당에 대한 정보를 자유롭게 써주세요."></textarea> <br>
-                    <button id="modalBtn1">
+                    <label for="photoInput" class="fileLabel">
                         <img src="./이눔세끼화이팅/resources/img/iconmonstr-plus-lined-240.png" alt="">
-                    </button>
+                    </label>
+                        <input type="file" id="photoInput" multiple>
                     
+                    <div id="selectedPhotos"></div>
+                    <script src="script.js"></script>
+                    
+
                     <br>
                     <button class="modalBtn" id="modalBtn2">닫기</button>
                     <button class="modalBtn" id="modalBtn3">제출</button>
@@ -855,6 +908,90 @@
                 </div>
             </div>
         </div>
+        <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const photoInput = document.getElementById('photoInput');
+            const selectedPhotosContainer = document.getElementById('selectedPhotos');
+
+            let selectedPhotos = [];
+
+            photoInput.addEventListener('change', function(event) {
+                selectedPhotos = Array.from(event.target.files);
+                updateSelectedPhotosList();
+            });
+
+            function updateSelectedPhotosList() {
+                selectedPhotosContainer.innerHTML = '';
+                selectedPhotos.forEach((photo, index) => {
+                    const photoItem = document.createElement('div');
+                    const previewContainer = document.createElement('div');
+                    const previewImg = document.createElement('img');
+                    const deleteButton = document.createElement('button');
+
+                    previewContainer.classList.add('preview-container');
+                    previewImg.src = URL.createObjectURL(photo);
+                    previewImg.classList.add('preview-img');
+                    deleteButton.textContent = 'X';
+                    deleteButton.classList.add('delete-button');
+                    deleteButton.addEventListener('click', function() {
+                        selectedPhotos.splice(index, 1);
+                        updateSelectedPhotosList();
+                    });
+
+                    previewContainer.appendChild(previewImg);
+                    previewContainer.appendChild(deleteButton);
+                    photoItem.appendChild(previewContainer);
+                    selectedPhotosContainer.appendChild(photoItem);
+                });
+            }
+        });
+
+//         document.addEventListener('DOMContentLoaded', function() {
+//     const photoInput = document.getElementById('photoInput');
+//     const selectedPhotosContainer = document.getElementById('selectedPhotos');
+
+//     let selectedPhotos = [];
+
+//     photoInput.addEventListener('change', function(event) {
+//         selectedPhotos = Array.from(event.target.files);
+//         updateSelectedPhotosList();
+//     });
+
+//     function updateSelectedPhotosList() {
+//         selectedPhotosContainer.innerHTML = '';
+//         selectedPhotos.forEach((photo, index) => {
+//             const photoItem = document.createElement('div');
+//             const previewContainer = document.createElement('div');
+//             const previewImg = document.createElement('img');
+//             const deleteButton = document.createElement('button');
+
+//             previewContainer.classList.add('preview-container');
+//             previewImg.src = URL.createObjectURL(photo);
+//             previewImg.classList.add('preview-img');
+//             deleteButton.textContent = 'x';
+//             deleteButton.classList.add('delete-button');
+//             deleteButton.addEventListener('click', function() {
+//                 selectedPhotos.splice(index, 1);
+//                 updateSelectedPhotosList();
+//                 updateFileInputLabel();
+//             });
+
+//             previewContainer.appendChild(previewImg);
+//             previewContainer.appendChild(deleteButton);
+//             photoItem.appendChild(previewContainer);
+//             selectedPhotosContainer.appendChild(photoItem);
+//         });
+//     }
+
+//     function updateFileInputLabel() {
+//         const label = document.querySelector('.fileLabel');
+//         const fileCount = selectedPhotos.length;
+//         const labelText = fileCount > 0 ? `Selected ${fileCount} files` : 'Select Photos';
+//         label.textContent = labelText;
+//     }
+// });
+        </script>
     </body>
 </html>
 

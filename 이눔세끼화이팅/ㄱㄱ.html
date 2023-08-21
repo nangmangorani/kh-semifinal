@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Photo Download with Preview</title>
+    <style>
+        #selectedPhotos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .preview-img {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="photoInput" multiple>
+    <button id="downloadButton">Download Selected Photos</button>
+    <div id="selectedPhotos"></div>
+    <script src="script.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const photoInput = document.getElementById('photoInput');
+    const downloadButton = document.getElementById('downloadButton');
+    const selectedPhotosContainer = document.getElementById('selectedPhotos');
+
+    let selectedPhotos = [];
+
+    photoInput.addEventListener('change', function(event) {
+        selectedPhotos = Array.from(event.target.files);
+        updateSelectedPhotosList();
+    });
+
+    downloadButton.addEventListener('click', function() {
+        if (selectedPhotos.length > 0) {
+            selectedPhotos.forEach(photo => {
+                downloadPhoto(photo);
+            });
+        }
+    });
+
+    function updateSelectedPhotosList() {
+        selectedPhotosContainer.innerHTML = '';
+        selectedPhotos.forEach(photo => {
+            const photoItem = document.createElement('div');
+            const previewImg = document.createElement('img');
+            previewImg.classList.add('preview-img');
+            previewImg.src = URL.createObjectURL(photo);
+            photoItem.appendChild(previewImg);
+            selectedPhotosContainer.appendChild(photoItem);
+        });
+    }
+
+    function downloadPhoto(photo) {
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(photo);
+        downloadLink.download = photo.name;
+        downloadLink.click();
+        URL.revokeObjectURL(photo);
+    }
+});
+
+    </script>
+</body>
+</html>
