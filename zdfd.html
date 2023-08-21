@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+  .heart {
+    width: 100px;
+    height: 100px;
+    position: relative;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: #ccc; /* Initial color: gray */
+    transition: background 0.3s;
+  }
+
+  .heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+
+  .heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+
+  .heart.filled::before,
+  .heart.filled::after {
+    background: #ff5757; /* Filled color: pink */
+  }
+</style>
+</head>
+<body>
+<span class="heart"></span>
+<script>
+  const heart = document.querySelector('.heart');
+
+  heart.addEventListener('click', () => {
+    heart.classList.toggle('filled');
+  });
+</script>
+</body>
+</html>
