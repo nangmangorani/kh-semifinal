@@ -34,11 +34,11 @@
         }
 
         span {
-            box-sizing: border-box
+            box-sizing: border-box;
         }
 
         .wrap {
-            width: 1000px;
+            width: 1000px;  
             height: 2000px;
             margin: auto;
         }
@@ -420,7 +420,8 @@
             height: 80px;
             cursor: pointer;
             border: 1px solid lightgray;
-
+            margin-top: 10px;
+            
         }
 
         .fileLabel>img {
@@ -450,6 +451,9 @@
             opacity: 0.5;
         }
 
+
+        
+
         .delete-button {
             display: none;
             position: absolute;
@@ -469,6 +473,16 @@
 
         .preview-img:hover {
             opacity: 0.5;
+        }
+
+        .photo-count {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: black;
+            padding: 2px 5px;
+            border-radius: 3px;
         }
 
         .heart-container {
@@ -974,18 +988,19 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form action="<%= contextPath %>/quitMember.me" method="post">
+                    <form action="" method="post">
                         <span>식당이름</span> <br>
                         <input type="text" name="" id="inputRestaurantName" placeholder="등록하려는 식당명을 입력하세요."> <br><br>
                         <span>식당정보</span> <br>
                         <textarea name="" id="inputRestaurantInf" cols="30" rows="10"
                             placeholder="식당에 대한 정보를 자유롭게 써주세요."></textarea> <br>
-                        <label for="photoInput" class="fileLabel">
-                            <img src="./이눔세끼화이팅/resources/img/iconmonstr-plus-lined-240.png" alt="">
-                        </label>
-                        <input type="file" id="photoInput" multiple>
-
                         <div id="selectedPhotos"></div>
+                            <label for="photoInput" class="fileLabel">
+                                <img src="./이눔세끼화이팅/resources/img/iconmonstr-plus-lined-240.png" alt="">
+                            </label>
+                            <input type="file" id="photoInput" multiple>
+                            <span class="photoInputCount"></span>
+                            
                         <script src="script.js"></script>
 
 
@@ -1001,17 +1016,23 @@
             document.addEventListener('DOMContentLoaded', function () {
                 const photoInput = document.getElementById('photoInput');
                 const selectedPhotosContainer = document.getElementById('selectedPhotos');
+                const photoInputCount = document.querySelector('.photoInputCount');
 
                 // 이미지 담길 배열
                 let selectedPhotos = [];
 
                 photoInput.addEventListener('change', function (event) {
-                    selectedPhotos = Array.from(event.target.files);
-                    if (selectedPhotos.length > 5) {
-                        selectedPhotos = selectedPhotos.slice(0, 5); // Limit to first 5 images
-                        alert("사진은 최대 5장까지 가능합니다.");
+                    const newSelectedPhotos = Array.from(event.target.files);
+                    const totalPhotos = selectedPhotos.length + newSelectedPhotos.length;
+
+                    if (totalPhotos > 5) {
+                        alert("최대 5장까지 가능합니다.");
+                        return; // 총 사진 개수가 제한을 초과하면 처리 중지
                     }
+
+                    selectedPhotos.push(...newSelectedPhotos); // 새로운 사진 추가
                     updateSelectedPhotosList();
+                    updatePhotoInputCount();
                 });
 
                 function updateSelectedPhotosList() {
@@ -1030,11 +1051,12 @@
                         deleteButton.addEventListener('click', function () {
                             selectedPhotos.splice(index, 1);
                             updateSelectedPhotosList();
-                            clearPhotoInput(); // Clear input after image deletion
+                            updatePhotoInputCount(); // 사진 삭제 후 카운트 업데이트
+                            clearPhotoInput(); // 이미지 삭제 후 입력값 초기화
                         });
 
                         function clearPhotoInput() {
-                            photoInput.value = ''; // Clear the input value
+                            photoInput.value = ''; // 입력값 초기화
                         }
 
                         previewContainer.appendChild(previewImg);
@@ -1042,8 +1064,20 @@
                         photoItem.appendChild(previewContainer);
                         selectedPhotosContainer.appendChild(photoItem);
                     });
+
+                    updatePhotoInputCount(); // 사진 추가 시 카운트 업데이트
                 }
+
+                function updatePhotoInputCount() {
+                    const countDisplay = `${selectedPhotos.length}/5`; // 총 사진 개수 표시
+                    photoInputCount.textContent = countDisplay;
+                }
+
+                // 초기화
+                updateSelectedPhotosList();
+                updatePhotoInputCount();
             });
+
 
 
 
