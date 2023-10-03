@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mazer Admin Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+
+    <link rel="stylesheet" href="assets/vendors/choices.js/choices.min.css" />
+
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title">Menu</li>
+
+                        <li class="sidebar-item  ">
+                            <a href="index.html" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Components</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="component-alert.html">Alert</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Extra Components</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="extra-component-avatar.html">Avatar</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="extra-component-sweetalert.html">Sweet Alert</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="extra-component-toastify.html">Toastify</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="extra-component-rating.html">Rating</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="extra-component-divider.html">Divider</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-grid-1x2-fill"></i>
+                                <span>Layouts</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="layout-default.html">Default Layout</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="layout-vertical-1-column.html">1 Column</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="layout-vertical-navbar.html">Vertical with Navbar</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="layout-horizontal.html">Horizontal Menu</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+            
+            <section class="section">
+                <div class="row" id="table-head">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">마일스톤</h4>
+                                <div class="form-group" style="padding-top: 20px;">
+                                    <button class="btn btn-primary">Opened</button>
+                                    <button class="btn btn-primary">Closed</button>
+                                    <button class="btn btn-primary">전체보기</button>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="card-content">
+                                <div class="card-body">
+                                    
+                                </div>
+                                <!-- table head dark -->
+                                <div class="table-responsive">
+                                    <table class="table mb-0">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>제목</th>
+                                                <th>생성일</th>
+                                                <th>종료일</th>
+                                                <th>최근수정일</th>
+                                                <th>진척도</th>
+                                                <th>진행중인 이슈</th>
+                                                <th>종료된 이슈</th>
+                                                <th>작성자</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-bold-500">1</td>
+                                                <td class="text-bold-500"><a href="#" style="color: black; font-weight: bold;">마일스톤페이지입니다1</a></td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">No due date</td>
+                                                <td>2023-11-07</td>
+                                                <td>
+                                                    <div class="progress progress-primary mb-4">
+                                                    <div class="progress-bar progress-label" role="progressbar" style="width: 35%"
+                                                        aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td>3</td>
+                                                <td>2</td>
+                                                <td>나</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">2</td>
+                                                <td class="text-bold-500">마일스톤페이지입니다2</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Graphic concepts</td>
+                                                <td>Remote</td>
+                                                <td>진행중</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">3</td>
+                                                <td class="text-bold-500">마일스톤페이지입니다3</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Animation</td>
+                                                <td>Remote</td>
+                                                <td>진행중</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">4</td>
+                                                <td class="text-bold-500">마일스톤페이지입니다4</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Animation</td>
+                                                <td>Remote</td>
+                                                <td>진행중</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">5</td>
+                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Animation</td>
+                                                <td>Remote</td>
+                                                <td>진행완료</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">5</td>
+                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Animation</td>
+                                                <td>Remote</td>
+                                                <td>진행완료</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">5</td>
+                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Animation</td>
+                                                <td>Remote</td>
+                                                <td>진행완료</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">5</td>
+                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Animation</td>
+                                                <td>Remote</td>
+                                                <td>진행완료</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">5</td>
+                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Animation</td>
+                                                <td>Remote</td>
+                                                <td>진행완료</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">5</td>
+                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Animation</td>
+                                                <td>Remote</td>
+                                                <td>진행완료</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p>2021 &copy; Mazer</p>
+                    </div>
+                    <div class="float-end">
+                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                                href="http://ahmadsaugi.com">A. Saugi</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/vendors/choices.js/choices.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+</body>
